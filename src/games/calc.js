@@ -24,9 +24,9 @@ function generateRound () {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const operator = getRandomOperation();
-  const answer = String(calculate(number1, operator, number2));
+  const correctAnswer = String(calculate(number1, operator, number2));
   const question = `${number1}${operator}${number2}`;
-  return [question, answer];
+  return [question, correctAnswer];
 }
 
 export default function runCalcGame() {
