@@ -12,9 +12,11 @@ for (let i = 0; i < 3; i += 1) {
   const answerUser = readlineSync.question('Your answer:');
 
   if (answerUser !== correctAnswer) {
-    console.log(`${answerUser} is wrong answer ;(. Correct answer was ${answer}.\nLet's try again, ${userName}!`);
+    console.log(`${answerUser} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${userName}!`);
+    return;
+  } else {
+    console.log('Correct!');
   }
-  console.log('Correct!');
 }
 console.log(`Congratulations, ${userName}!`);
 };
