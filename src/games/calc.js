@@ -2,12 +2,7 @@ import getRandomNumber from "../randomNums.js";
 
 import greeting from '../index.js';
 
-function getRandomOperation () {
-  const operators = ['+', '-', '*'];
-  const indexOfOperators = getRandomNumber(0, operators.length);
-  const operator = operators[indexOfOperators];
-  return operator;
-}
+const operatorArray = ['+', '-', '*'];
 
 const calculate = (number1, operator, number2) => {
   switch (operator) {
@@ -16,14 +11,16 @@ const calculate = (number1, operator, number2) => {
     case '-':
       return number1 - number2;
     case '*':
-        return number1 * number2;
+      return number1 * number2;
     }
 };
 
 function generateRound () {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
-  const operator = getRandomOperation();
+  const index = getRandomNumber(0, operatorArray.length - 1);
+  const selectedOperator = operatorArray[index];
+  const operator = selectedOperator;
   const correctAnswer = String(calculate(number1, operator, number2));
   const question = `${number1}${operator}${number2}`;
   return [question, correctAnswer];
